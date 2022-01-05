@@ -2,7 +2,7 @@
   <%= link_to 'New Recipe', new_recipe_path, class: 'btn btn-primary new-food' %>
     <div>
       <% @recipes.each do |recipe| %>
-        <div>
+        <div class="d-flex justify-content-between">
           <div>
             <h3><%= recipe.name %></h3>
             <%= link_to 'Delete', recipe_path(recipe), method: :delete, class: 'btn btn-outline-secondary' %>

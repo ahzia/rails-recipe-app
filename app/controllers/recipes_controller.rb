@@ -1,6 +1,11 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.where(user_id: current_user.id)
+    if current_user
+      @recipes = Recipe.where(user_id: current_user.id)
+    else
+      flash[:notice] = 'Please Login First'
+      redirect_to new_user_session_path
+    end
   end
 
   def show
