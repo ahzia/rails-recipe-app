@@ -60,3 +60,6 @@ gem 'devise'
 
 # Prettier
 gem 'prettier'
+
+# Bootstrap
+gem 'bootstrap', '~> 5.1.3'
