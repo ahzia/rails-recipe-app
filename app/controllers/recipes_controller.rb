@@ -1,7 +1,9 @@
 class RecipesController < ApplicationController
     def index
-        @currentUser = current_user.id
-        @recipes= Recipe.find_by_user_id(@currentUser)
+        # @currentUser = current_user.id
+        # @recipes= Recipe.find_by_user_id(@currentUser)
+        @recipes= Recipe.all
+
     end
     
     def new
@@ -9,7 +11,7 @@ class RecipesController < ApplicationController
     end
   
     def create
-      @recipe = Recipt.new(recipt_params)
+      @recipe = Recipe.new(recipe_params)
       @recipe.user = current_user
       if @recipe.save
         flash[:notice] = 'Recipe added successfully'
