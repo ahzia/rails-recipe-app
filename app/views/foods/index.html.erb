@@ -1,0 +1,25 @@
+<div class="table-responsive">
+  <div class="container">
+    <%= link_to 'New Food', new_food_path, class: 'btn btn-primary new-food' %>
+    <table class="table table-striped border">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Measurement Unit</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @foods.each do |food| %>
+        <tr>
+          <td><%= food.name %></td>
+          <td><%= food.price %></td>
+          <td><%= food.measurement_unit %></td>
+          <td><%= link_to 'Delete', food_path(food), method: :delete, class: 'btn btn-outline-secondary' %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
