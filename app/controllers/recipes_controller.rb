@@ -1,9 +1,6 @@
 class RecipesController < ApplicationController
     def index
-        # @currentUser = current_user.id
-        # @recipes= Recipe.find_by_user_id(@currentUser)
-        @recipes= Recipe.all
-
+        @recipes= Recipe.where(user_id: current_user.id)
     end
     
     def new
@@ -37,9 +34,13 @@ class RecipesController < ApplicationController
   
     def destroy
       @recipe = Recipe.find(params[:id])
-      @recipe.destroy
-      flash[:notice] = 'Recipe deleted successfully'
-      redirect_to recipes_path
+      if @recipe.user_id=current_user.id
+        @recipe.destroy
+        flash[:notice] = 'Recipe deleted successfully'
+        redirect_to recipes_path
+      else
+        flash[:notice] = 'Only deletable by the owner'
+      end
     end
   
     private
