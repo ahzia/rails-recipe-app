@@ -1,0 +1,15 @@
+ <!-- add ingredient to recipe -->
+ <%= form_with model: [@recipe, @recipe.recipe_foods.build], method: :post do |f| %>
+   <div class="form-group">
+     <%= f.label :food_id, class: 'form-label' %>
+     <%= f.select :food_id, @foods.collect { |food| [food.name, food.id] } %>
+   </div>
+   <div class="form-group">
+     <%= f.label :quantity, class: 'form-label' %>
+     <%= f.text_field :quantity, required: true, class: "form-control", id: "quantity"%>
+   </div>
+   <div class="modal-footer">
+     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+     <%= f.submit 'Save', class: "btn btn-success" %>
+   </div>
+  <% end %>
