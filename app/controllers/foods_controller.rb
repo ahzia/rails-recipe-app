@@ -1,7 +1,12 @@
 class FoodsController < ApplicationController
   def index
-    @foods = Food.all
-    @users = User.all
+    if current_user
+      @foods = Food.all
+      @users = User.all
+    else
+      flash[:notice] = 'Please Login First'
+      redirect_to new_user_session_path
+    end
   end
 
   def new
