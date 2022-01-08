@@ -7,6 +7,12 @@
   </head>
 
   <body>
+    <!-- Bootstrap navbar to foods, recipes, public recipes -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
+      <%= link_to 'Foods', foods_path, class: 'navbar-brand' %>
+      <%= link_to 'Recipes', recipes_path, class: 'navbar-brand' %>
+      <%= link_to 'Public Recipes', public_recipes_path, class: 'navbar-brand' %>
+    </nav>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
