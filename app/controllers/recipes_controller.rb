@@ -10,6 +10,8 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    @foods = Food.where(user: current_user)
+    @recipe_foods = RecipeFood.find_by(recipe_id: @recipe.id)
   end
 
   def new
