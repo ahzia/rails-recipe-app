@@ -5,5 +5,4 @@ class RecipeFood < ApplicationRecord
   def calc_value(quantity, price)
     quantity * price
   end
-  
 end
