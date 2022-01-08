@@ -31,7 +31,7 @@ class RecipesController < ApplicationController
       render :edit
     end
   end
-
+  
   def destroy
     @recipe = Recipe.find(params[:id])
     if @recipe.user_id == current_user.id
