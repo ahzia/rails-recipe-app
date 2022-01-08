@@ -4,7 +4,9 @@
       <% @recipes.each do |recipe| %>
         <div class="d-flex justify-content-between">
           <div>
-            <h3><%= recipe.name %></h3>
+          <%= link_to recipe_path(recipe.id), id: "recipe_path#{recipe.id}" do %>
+          <h3><%= recipe.name %></h3>
+          <% end %>
             <%= link_to 'Delete', recipe_path(recipe), method: :delete, class: 'btn btn-outline-secondary' %>
           </div>
           <div>
