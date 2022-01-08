@@ -5,3 +5,25 @@
 body {
   background-color: #f5f5f5;
 }
+
+.form-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0.1px 0.1px 5px #ccc;
+}
+
+.table-responsive {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.new-food {
+  float: right;
+  margin-bottom: 3rem;
+}
