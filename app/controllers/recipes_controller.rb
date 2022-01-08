@@ -39,7 +39,7 @@ class RecipesController < ApplicationController
       flash[:notice] = 'Recipe deleted successfully'
       redirect_to recipes_path
     else
-      flash[:notice] = 'Only deletable by the owner'
+      flash[:notice] = 'Only deletable by the user who created the recipe'
     end
   end
 
